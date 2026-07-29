@@ -12,7 +12,6 @@
 <link rel="apple-touch-icon" href="favicon-256.png">
 
 <!-- Fontes self-hosted -->
-<link rel="preload" href="assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/hero-1-varanda.webp" fetchpriority="high">
 
@@ -22,18 +21,14 @@
 <meta property="og:image" content="assets/img/hero-1-varanda.webp">
 
 <style>
-/* fontes self-hosted (variáveis, latin + latin-ext) */
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url('assets/fonts/cormorant-latinext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url('assets/fonts/cormorant-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400 500;font-display:swap;src:url('assets/fonts/cormorant-italic-latinext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400 500;font-display:swap;src:url('assets/fonts/cormorant-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+/* fonte self-hosted (Jost variável, latin + latin-ext) */
 @font-face{font-family:'Jost';font-style:normal;font-weight:300 500;font-display:swap;src:url('assets/fonts/jost-latinext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'Jost';font-style:normal;font-weight:300 500;font-display:swap;src:url('assets/fonts/jost-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 :root{
   --verde-900:#2b3b33; --verde-800:#3e564c; --verde-700:#465f54; --verde-600:#507f69; --verde-400:#8aa798;
   --areia:#f2f0e9; --areia-2:#eceadf; --pedra:#e5e0d4; --linha:#d9d5c8;
   --tinta:#282e2a; --tinta-suave:#5d675f; --branco:#fbfaf6;
-  --serif:'Cormorant Garamond',Georgia,serif;
+  --serif:'Jost','Helvetica Neue',Arial,sans-serif;
   --sans:'Jost','Helvetica Neue',Arial,sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1);
   --gut:clamp(1.25rem,5vw,5.5rem);
@@ -52,16 +47,17 @@ a{color:inherit;text-decoration:none}
 .container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
 
 /* tipografia base */
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.04;letter-spacing:-.01em}
-.em{font-style:italic;color:var(--verde-600)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.1;letter-spacing:-.02em}
+.em{color:var(--verde-600);font-weight:400}
 .label{font-family:var(--sans);font-weight:400;font-size:.7rem;letter-spacing:.26em;text-transform:uppercase}
 .lead{font-size:clamp(1.05rem,1.6vw,1.28rem);line-height:1.75;color:var(--tinta-suave);font-weight:300}
 
 /* ============ NAV ============ */
 .nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .5s var(--ease),box-shadow .5s var(--ease)}
 .nav__in{display:flex;align-items:center;justify-content:space-between;height:84px}
+.nav__brand{position:relative;display:inline-flex;line-height:0}
 .nav__logo{height:40px;width:auto;transition:opacity .4s}
-.nav__logo--dark{position:absolute;opacity:0}
+.nav__logo--dark{position:absolute;top:0;left:0;opacity:0}
 .nav__links{display:flex;align-items:center;gap:2.1rem;list-style:none}
 .nav__links a{font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:#fff;opacity:.9;transition:opacity .3s,color .3s;position:relative}
 .nav__links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:currentColor;transition:width .35s var(--ease)}
@@ -129,20 +125,22 @@ section[id]{scroll-margin-top:88px}
 .marca{position:relative;background:var(--areia)}
 .marca__sym{position:absolute;right:-4%;top:8%;width:min(38vw,440px);opacity:.05;pointer-events:none}
 .marca__grid{display:grid;grid-template-columns:1fr;gap:clamp(1.4rem,4vw,3.5rem);position:relative}
-.marca__head{max-width:20ch}
-.marca__head h2{font-size:clamp(2.1rem,4.6vw,3.9rem);font-weight:300}
-.marca__body{max-width:60ch}
-.marca__body p+p{margin-top:1.15rem}
+.marca__head{max-width:26ch}
+.marca__head h2{font-size:clamp(1.15rem,1.55vw,1.3rem);font-weight:600;line-height:1.45;letter-spacing:normal}
+.marca__body{max-width:62ch}
+.marca__body p{font-size:1.05rem;line-height:1.75}
+.marca__body p+p{margin-top:1.1rem}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,3vw,2.6rem);margin-top:clamp(2.2rem,5vw,3.6rem);border-top:1px solid var(--linha);padding-top:clamp(1.8rem,4vw,2.8rem)}
 .pillar h3{font-size:1.5rem;font-weight:500;color:var(--verde-800)}
 .pillar p{font-size:.95rem;color:var(--tinta-suave);margin-top:.4rem}
-@media(min-width:900px){.marca__grid{grid-template-columns:.85fr 1.15fr;align-items:end}}
+@media(min-width:900px){.marca__grid{grid-template-columns:.8fr 1.2fr;align-items:start}}
 
 /* ============ LINHAS ============ */
 .linhas{background:var(--areia-2)}
 .sec-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut);margin-bottom:clamp(2.5rem,6vw,4.5rem)}
 .sec-head h2{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:300;max-width:15ch}
 .sec-head p{margin-top:1rem;max-width:52ch}
+#linhas .sec-head h2{max-width:none}
 .linha{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;padding-block:clamp(2rem,5vw,4rem)}
 .linha+.linha{border-top:1px solid var(--linha)}
 .linha__media{position:relative;overflow:hidden;border-radius:2px}
@@ -150,7 +148,7 @@ section[id]{scroll-margin-top:88px}
 .linha:hover .linha__media img{transform:scale(1.05)}
 .linha__num{font-family:var(--sans);font-weight:300;font-size:.8rem;letter-spacing:.2em;color:var(--verde-600)}
 .linha__name{font-size:clamp(2rem,3.6vw,3.1rem);font-weight:400;margin:.35rem 0 .1rem}
-.linha__tag{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--verde-600);margin-bottom:1rem}
+.linha__tag{font-family:var(--sans);font-weight:400;font-size:1.05rem;color:var(--verde-600);margin-bottom:1rem}
 .linha__desc{max-width:46ch;color:var(--tinta-suave);font-size:1rem}
 .linha__mats{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
 .chip{font-family:var(--sans);font-weight:300;font-size:.78rem;letter-spacing:.02em;color:var(--verde-800);
@@ -173,12 +171,11 @@ section[id]{scroll-margin-top:88px}
 .sw__disc img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .sw:hover .sw__disc img{transform:scale(1.09)}
 .sw__disc.is-tone{display:block}
-.sw__name{text-align:center;margin-top:.9rem;font-family:var(--serif);font-size:1.28rem;font-weight:400}
+.sw__name{text-align:center;margin-top:.9rem;font-family:var(--serif);font-size:1.12rem;font-weight:400;white-space:nowrap}
 .sw__type{text-align:center;font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-400);margin-top:.15rem}
 .amostras__note{margin-top:clamp(2.4rem,5vw,3.6rem);display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.16);padding-top:2rem}
-.amostras__note p{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);max-width:24ch}
-@media(min-width:680px){.swgrid{grid-template-columns:repeat(4,1fr)}}
-@media(min-width:1040px){.swgrid{grid-template-columns:repeat(8,1fr)}}
+.amostras__note p{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2vw,1.6rem);max-width:26ch;line-height:1.4}
+@media(min-width:760px){.swgrid{grid-template-columns:repeat(5,1fr)}}
 
 /* ============ APLICAÇÕES ============ */
 .aplic{background:var(--areia)}
@@ -190,9 +187,14 @@ section[id]{scroll-margin-top:88px}
   background:linear-gradient(transparent,rgba(24,34,29,.72));color:#fff}
 .apl__cap h3{font-size:clamp(1.3rem,2vw,1.9rem);font-weight:400}
 .apl__cap span{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);font-family:var(--sans);font-weight:300}
-.apl--tall{grid-row:span 2}
-.apl--wide{grid-column:span 2}
-@media(min-width:820px){.aplic__grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,230px)}}
+.apl{aspect-ratio:4/3}
+@media(min-width:820px){
+  .apl{aspect-ratio:auto}
+  .aplic__grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(155px,17vw,235px);
+    grid-template-areas:"fac pis pis int" "fac pi2 par pai"}
+  .apl--fac{grid-area:fac}.apl--pis{grid-area:pis}.apl--int{grid-area:int}
+  .apl--pisos{grid-area:pi2}.apl--par{grid-area:par}.apl--pai{grid-area:pai}
+}
 
 /* ============ DIFERENCIAIS ============ */
 .dif{background:var(--pedra)}
@@ -246,7 +248,7 @@ section[id]{scroll-margin-top:88px}
 /* marquee fino de nomes de pedra */
 .strip{background:var(--verde-800);color:#fff;overflow:hidden;padding-block:1rem;white-space:nowrap}
 .strip__track{display:inline-flex;gap:2.4rem;animation:marq 34s linear infinite;will-change:transform}
-.strip span{font-family:var(--serif);font-style:italic;font-size:1.15rem;opacity:.92}
+.strip span{font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;opacity:.95}
 .strip span::after{content:"·";margin-left:2.4rem;opacity:.5}
 @keyframes marq{to{transform:translateX(-50%)}}
 
@@ -270,9 +272,9 @@ section[id]{scroll-margin-top:88px}
 <!-- ===================== NAV ===================== -->
 <header class="nav" id="nav">
   <div class="container nav__in">
-    <a href="#topo" aria-label="Pedras do Brasil">
-      <img src="assets/img/logo-horizontal-branco.png" alt="Pedras do Brasil" class="nav__logo nav__logo--light" width="176" height="40">
-      <img src="assets/img/logo-horizontal.png" alt="" aria-hidden="true" class="nav__logo nav__logo--dark" width="176" height="40">
+    <a href="#topo" class="nav__brand" aria-label="Pedras do Brasil">
+      <img src="assets/img/logo-horizontal-branco.png" alt="Pedras do Brasil" class="nav__logo nav__logo--light" width="117" height="40">
+      <img src="assets/img/logo-horizontal.png" alt="" aria-hidden="true" class="nav__logo nav__logo--dark" width="117" height="40">
     </a>
     <nav aria-label="Principal">
       <ul class="nav__links">
@@ -345,7 +347,7 @@ section[id]{scroll-margin-top:88px}
       <h2>Pedra natural brasileira, escolhida <span class="em">peça por peça</span></h2>
     </div>
     <div class="marca__body rv rv-d1">
-      <p class="lead">A Pedras do Brasil reúne travertinos, moledos, seixos e revestimentos naturais das melhores pedreiras do país. Cada lote é selecionado à mão, do bloco ao acabamento.</p>
+      <p>A Pedras do Brasil reúne travertinos, moledos, seixos e revestimentos naturais das melhores pedreiras do país. Cada lote é selecionado à mão, do bloco ao acabamento.</p>
       <p>Trabalhamos com arquitetos, construtoras e famílias que querem o que só a pedra de verdade entrega: textura viva, frescor e uma beleza que envelhece bem. Nada de imitação, nada de padrão repetido. O nosso símbolo é um elo, e é assim que enxergamos cada projeto: uma parceria entre quem faz a pedra e quem constrói o sonho.</p>
     </div>
   </div>
@@ -378,7 +380,6 @@ section[id]{scroll-margin-top:88px}
     <article class="linha rv">
       <div class="linha__media"><img src="assets/img/linha-travertinos.webp" alt="Parede em travertino rock face" loading="lazy" width="1100" height="1375"></div>
       <div class="linha__txt">
-        <span class="linha__num">Linha 01</span>
         <h3 class="linha__name">Travertinos</h3>
         <p class="linha__tag">o clássico que não sai de moda</p>
         <p class="linha__desc">A pedra dos palácios romanos, agora no seu projeto. Tom quente, veios naturais e aquele toque acolhedor no piso e na parede.</p>
@@ -393,7 +394,6 @@ section[id]{scroll-margin-top:88px}
     <article class="linha rv">
       <div class="linha__media"><img src="assets/img/linha-moledos.webp" alt="Parede interna revestida em moledo branco" loading="lazy" width="1100" height="1213"></div>
       <div class="linha__txt">
-        <span class="linha__num">Linha 02</span>
         <h3 class="linha__name">Moledos</h3>
         <p class="linha__tag">pedra bruta, revestimento nobre</p>
         <p class="linha__desc">O revestimento que dá caráter a fachadas e paredes de destaque. Recortes irregulares que jogam com a luz e a sombra o dia inteiro.</p>
@@ -408,7 +408,6 @@ section[id]{scroll-margin-top:88px}
     <article class="linha rv">
       <div class="linha__media"><img src="assets/img/linha-piscina.webp" alt="Piscina com borda em pedra natural" loading="lazy" width="1100" height="1651"></div>
       <div class="linha__txt">
-        <span class="linha__num">Linha 03</span>
         <h3 class="linha__name">Piscina</h3>
         <p class="linha__tag">frescor no piso, elegância na borda</p>
         <p class="linha__desc">Pedras que não esquentam ao sol, não escorregam e emolduram a água com sofisticação. A área de lazer que todo mundo lembra.</p>
@@ -423,7 +422,6 @@ section[id]{scroll-margin-top:88px}
     <article class="linha rv">
       <div class="linha__media"><img src="assets/img/linha-calcadas.webp" alt="Piso externo em pedra natural com oliveira" loading="lazy" width="1000" height="1061"></div>
       <div class="linha__txt">
-        <span class="linha__num">Linha 04</span>
         <h3 class="linha__name">Calçadas &amp; Pisos</h3>
         <p class="linha__tag">o chão que conduz o olhar</p>
         <p class="linha__desc">Do passeio ao terraço, pisos naturais que aguentam o tempo e o trânsito sem perder a beleza. Cores para combinar com qualquer fachada.</p>
@@ -438,7 +436,6 @@ section[id]{scroll-margin-top:88px}
     <article class="linha rv">
       <div class="linha__media"><img src="assets/img/linha-seixos.webp" alt="Jardim de seixos com oliveira" loading="lazy" width="1000" height="1500"></div>
       <div class="linha__txt">
-        <span class="linha__num">Linha 05</span>
         <h3 class="linha__name">Seixos</h3>
         <p class="linha__tag">o paisagismo que arremata</p>
         <p class="linha__desc">Os detalhes que fazem o jardim. Seixos rolados para caminhos, canteiros, espelhos d'água e áreas de drenagem, com granulometrias variadas.</p>
@@ -463,10 +460,7 @@ section[id]{scroll-margin-top:88px}
       <div class="sw rv rv-d1"><div class="sw__disc"><img src="assets/textures/sw-travertino-liso.webp" alt="Travertino espinha de peixe" loading="lazy" width="560" height="560"></div><p class="sw__name">Travertino</p><p class="sw__type">Espinha de peixe</p></div>
       <div class="sw rv rv-d2"><div class="sw__disc"><img src="assets/textures/sw-moledo-branco.webp" alt="Moledo branco" loading="lazy" width="560" height="560"></div><p class="sw__name">Mármore Branco</p><p class="sw__type">Estilo moledo</p></div>
       <div class="sw rv rv-d3"><div class="sw__disc"><img src="assets/textures/sw-moledo-cinza.webp" alt="Moledo cinza Miracema" loading="lazy" width="560" height="560"></div><p class="sw__name">Miracema</p><p class="sw__type">Estilo moledo</p></div>
-      <div class="sw rv"><div class="sw__disc"><img src="assets/textures/sw-moledo-grafite.webp" alt="Moledo grafite Bossa Nero" loading="lazy" width="560" height="560"></div><p class="sw__name">Bossa Nero</p><p class="sw__type">Estilo moledo</p></div>
-      <div class="sw rv rv-d1"><div class="sw__disc is-tone" style="background:radial-gradient(circle at 35% 30%,#e9d9a6,#d4b06a 70%,#b8964f)"></div><p class="sw__name">Amarelo Mel</p><p class="sw__type">Moledo · piso</p></div>
-      <div class="sw rv rv-d2"><div class="sw__disc is-tone" style="background:radial-gradient(circle at 35% 30%,#e8cdc4,#d8a99b 68%,#c68f7f)"></div><p class="sw__name">Rosê</p><p class="sw__type">Moledo · piso</p></div>
-      <div class="sw rv rv-d3"><div class="sw__disc is-tone" style="background:radial-gradient(circle at 35% 30%,#9fae9c,#6f8a72 66%,#566f59)"></div><p class="sw__name">Verde</p><p class="sw__type">Estilo moledo</p></div>
+      <div class="sw rv rv-d4"><div class="sw__disc"><img src="assets/textures/sw-moledo-grafite.webp" alt="Moledo grafite Bossa Nero" loading="lazy" width="560" height="560"></div><p class="sw__name">Bossa Nero</p><p class="sw__type">Estilo moledo</p></div>
     </div>
     <div class="amostras__note rv">
       <p>O catálogo completo, com formatos e disponibilidade, vai direto pra você.</p>
@@ -486,12 +480,12 @@ section[id]{scroll-margin-top:88px}
   </div>
   <div class="container">
     <div class="aplic__grid">
-      <figure class="apl apl--tall rv"><img src="assets/img/hero-2-fachada.webp" alt="Fachada em pedra" loading="lazy"><figcaption class="apl__cap"><span>Externo</span><h3>Fachadas</h3></figcaption></figure>
-      <figure class="apl apl--wide rv rv-d1"><img src="assets/img/hero-3-piscina.webp" alt="Piscina em pedra" loading="lazy"><figcaption class="apl__cap"><span>Lazer</span><h3>Piscinas</h3></figcaption></figure>
-      <figure class="apl rv rv-d2"><img src="assets/img/apl-interiores.webp" alt="Interiores em pedra" loading="lazy"><figcaption class="apl__cap"><span>Dentro de casa</span><h3>Interiores</h3></figcaption></figure>
-      <figure class="apl rv rv-d1"><img src="assets/img/apl-pisos.webp" alt="Pisos em pedra" loading="lazy"><figcaption class="apl__cap"><span>Chão</span><h3>Pisos</h3></figcaption></figure>
-      <figure class="apl apl--wide rv rv-d2"><img src="assets/img/linha-seixos.webp" alt="Paisagismo com seixos" loading="lazy"><figcaption class="apl__cap"><span>Jardim</span><h3>Paisagismo</h3></figcaption></figure>
-      <figure class="apl rv rv-d3"><img src="assets/img/hero-4-travertino.webp" alt="Parede em travertino" loading="lazy"><figcaption class="apl__cap"><span>Detalhe</span><h3>Paredes</h3></figcaption></figure>
+      <figure class="apl apl--fac rv"><img src="assets/img/hero-2-fachada.webp" alt="Fachada em pedra" loading="lazy"><figcaption class="apl__cap"><span>Externo</span><h3>Fachadas</h3></figcaption></figure>
+      <figure class="apl apl--pis rv rv-d1"><img src="assets/img/hero-3-piscina.webp" alt="Piscina em pedra" loading="lazy"><figcaption class="apl__cap"><span>Lazer</span><h3>Piscinas</h3></figcaption></figure>
+      <figure class="apl apl--int rv rv-d2"><img src="assets/img/apl-interiores.webp" alt="Interiores em pedra" loading="lazy"><figcaption class="apl__cap"><span>Dentro de casa</span><h3>Interiores</h3></figcaption></figure>
+      <figure class="apl apl--pisos rv rv-d1"><img src="assets/img/apl-pisos.webp" alt="Pisos em pedra" loading="lazy"><figcaption class="apl__cap"><span>Chão</span><h3>Pisos</h3></figcaption></figure>
+      <figure class="apl apl--pai rv rv-d2"><img src="assets/img/linha-seixos.webp" alt="Paisagismo com seixos" loading="lazy"><figcaption class="apl__cap"><span>Jardim</span><h3>Paisagismo</h3></figcaption></figure>
+      <figure class="apl apl--par rv rv-d3"><img src="assets/img/hero-4-travertino.webp" alt="Parede em travertino" loading="lazy"><figcaption class="apl__cap"><span>Detalhe</span><h3>Paredes</h3></figcaption></figure>
     </div>
   </div>
 </section>
