@@ -126,7 +126,7 @@ section[id]{scroll-margin-top:88px}
 .marca__sym{position:absolute;right:-4%;top:8%;width:min(38vw,440px);opacity:.05;pointer-events:none}
 .marca__grid{display:grid;grid-template-columns:1fr;gap:clamp(1.4rem,4vw,3.5rem);position:relative}
 .marca__head{max-width:none}
-.marca__head h2{font-size:clamp(1.7rem,2.4vw,2.3rem);font-weight:300;line-height:1.2;letter-spacing:-.02em;max-width:26ch;text-wrap:balance}
+.marca__head h2{font-size:clamp(1.9rem,3.1vw,3rem);font-weight:300;line-height:1.18;letter-spacing:-.02em;max-width:26ch;text-wrap:balance}
 .marca__body{max-width:62ch}
 .marca__body p{font-size:1.05rem;line-height:1.75}
 .marca__body p+p{margin-top:1.1rem}
@@ -137,7 +137,12 @@ section[id]{scroll-margin-top:88px}
   .pillars{border-top:none;padding-top:0;gap:clamp(1rem,1.5vw,1.4rem)}
   .pillar{border:1px solid var(--linha);border-radius:0;padding:clamp(1.5rem,2vw,2.1rem);background:rgba(255,255,255,.4)}
 }
-@media(min-width:900px){.marca__grid{grid-template-columns:1.25fr 1fr;align-items:start}}
+@media(min-width:900px){
+  .marca__grid{grid-template-columns:1.25fr 1fr;align-items:start}
+  /* quebra controlada em 3 linhas no desktop */
+  .marca__head h2{max-width:none;text-wrap:initial}
+  .marca__head h2 .ln{display:block}
+}
 
 /* ============ LINHAS ============ */
 .linhas{background:var(--areia-2)}
@@ -145,6 +150,23 @@ section[id]{scroll-margin-top:88px}
 .sec-head h2{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:300;max-width:15ch}
 .sec-head p{margin-top:1rem;max-width:52ch}
 #linhas .sec-head h2{max-width:none;font-size:clamp(2.4rem,5.6vw,4.8rem)}
+/* título + subtítulo centralizados (só o cabeçalho da seção) */
+.sec-head--center{text-align:center}
+.sec-head--center h2{max-width:22ch;margin-inline:auto;text-wrap:balance}
+.sec-head--center p{margin-inline:auto}
+#linhas .sec-head--center h2{max-width:24ch}
+/* crossfade estático de fotos dentro de cada linha */
+.xfade{position:relative;aspect-ratio:4/3.15;overflow:hidden}
+.xfade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  animation:xfade 13.5s var(--ease) infinite}
+.xfade img:nth-child(1){animation-delay:0s}
+.xfade img:nth-child(2){animation-delay:4.5s}
+.xfade img:nth-child(3){animation-delay:9s}
+@keyframes xfade{0%{opacity:1}30%{opacity:1}35%{opacity:0}95%{opacity:0}100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .xfade img{animation:none;opacity:0}
+  .xfade img:nth-child(1){opacity:1}
+}
 .linha{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;padding-block:clamp(2rem,5vw,4rem)}
 .linha+.linha{border-top:1px solid var(--linha)}
 .linha__media{position:relative;overflow:hidden;border-radius:2px}
@@ -182,7 +204,9 @@ section[id]{scroll-margin-top:88px}
 @media(min-width:760px){.swgrid{grid-template-columns:repeat(5,1fr)}}
 
 /* ============ APLICAÇÕES ============ */
-.aplic{background:var(--areia)}
+.aplic{background:var(--verde-800);color:#fff;position:relative;overflow:hidden}
+.aplic .sec-head h2{color:#fff}
+.aplic .sec-head p{color:rgba(255,255,255,.72)}
 .aplic__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.7rem,1.6vw,1.2rem)}
 .apl{position:relative;overflow:hidden;border-radius:2px;background:var(--verde-900)}
 .apl img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--ease);opacity:.94}
@@ -283,7 +307,7 @@ section[id]{scroll-margin-top:88px}
     <nav aria-label="Principal">
       <ul class="nav__links">
         <li><a href="#linhas">Linhas</a></li>
-        <li><a href="#amostras">Amostras</a></li>
+        <li hidden><a href="#amostras">Amostras</a></li>
         <li><a href="#aplicacoes">Aplicações</a></li>
         <li><a href="#marca">Sobre</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -297,7 +321,7 @@ section[id]{scroll-margin-top:88px}
 <div class="mobile" id="mobile">
   <button class="mobile__close" id="mclose" aria-label="Fechar menu">&times;</button>
   <a href="#linhas">Linhas</a>
-  <a href="#amostras">Amostras</a>
+  <a href="#amostras" hidden>Amostras</a>
   <a href="#aplicacoes">Aplicações</a>
   <a href="#marca">Sobre</a>
   <a href="#contato">Contato</a>
@@ -348,7 +372,7 @@ section[id]{scroll-margin-top:88px}
   <img src="assets/img/simbolo.png" alt="" aria-hidden="true" class="marca__sym" width="440" height="452" loading="lazy">
   <div class="container marca__grid">
     <div class="marca__head rv">
-      <h2>Pedra natural brasileira, escolhida <span class="em">peça por peça</span></h2>
+      <h2><span class="ln">Pedra natural</span> <span class="ln">brasileira, escolhida</span> <span class="ln em">peça por peça</span></h2>
     </div>
     <div class="marca__body rv rv-d1">
       <p>A Pedras do Brasil reúne travertinos, moledos, seixos e revestimentos naturais das melhores pedreiras do país. Cada lote é selecionado à mão, do bloco ao acabamento.</p>
@@ -374,15 +398,21 @@ section[id]{scroll-margin-top:88px}
 
 <!-- ===================== LINHAS ===================== -->
 <section class="section linhas" id="linhas">
-  <div class="sec-head rv">
-    <h2>Cinco linhas, uma casa inteira em pedra</h2>
+  <div class="sec-head sec-head--center rv">
+    <h2>Pedras decorativas para diferentes estilos de projetos</h2>
     <p class="lead">Do piso da varanda à borda da piscina, da fachada ao jardim. Conheça as coleções e os materiais de cada uma.</p>
   </div>
 
   <div class="container">
     <!-- 1 travertinos -->
     <article class="linha rv">
-      <div class="linha__media"><img src="assets/img/linha-travertinos.webp" alt="Parede em travertino rock face" loading="lazy" width="1100" height="1375"></div>
+      <div class="linha__media">
+        <div class="xfade">
+          <img src="assets/img/linha-travertinos-1.webp" alt="Parede em travertino rock face" loading="lazy" width="900" height="1350">
+          <img src="assets/img/linha-travertinos-2.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+          <img src="assets/img/linha-travertinos-3.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+        </div>
+      </div>
       <div class="linha__txt">
         <h3 class="linha__name">Travertinos</h3>
         <p class="linha__tag">o clássico que não sai de moda</p>
@@ -393,7 +423,13 @@ section[id]{scroll-margin-top:88px}
 
     <!-- 2 moledos -->
     <article class="linha rv">
-      <div class="linha__media"><img src="assets/img/linha-moledos.webp" alt="Parede interna revestida em moledo branco" loading="lazy" width="1100" height="1213"></div>
+      <div class="linha__media">
+        <div class="xfade">
+          <img src="assets/img/linha-moledos-1.webp" alt="Parede interna revestida em moledo" loading="lazy" width="900" height="1350">
+          <img src="assets/img/linha-moledos-2.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+          <img src="assets/img/linha-moledos-3.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+        </div>
+      </div>
       <div class="linha__txt">
         <h3 class="linha__name">Moledos</h3>
         <p class="linha__tag">pedra bruta, revestimento nobre</p>
@@ -404,7 +440,7 @@ section[id]{scroll-margin-top:88px}
 
     <!-- 3 piscina -->
     <article class="linha rv">
-      <div class="linha__media"><img src="assets/img/linha-piscina.webp" alt="Piscina com borda em pedra natural" loading="lazy" width="1100" height="1651"></div>
+      <div class="linha__media"><img src="assets/img/linha-piscina-1.webp" alt="Piscina com borda em pedra natural" loading="lazy" width="900" height="1350"></div>
       <div class="linha__txt">
         <h3 class="linha__name">Piscina</h3>
         <p class="linha__tag">frescor no piso, elegância na borda</p>
@@ -413,7 +449,8 @@ section[id]{scroll-margin-top:88px}
       </div>
     </article>
 
-    <!-- 4 calçadas -->
+    <!-- 4 calçadas — OCULTO POR ORA (descomentar quando houver fotos) -->
+    <!--
     <article class="linha rv">
       <div class="linha__media"><img src="assets/img/linha-calcadas.webp" alt="Piso externo em pedra natural com oliveira" loading="lazy" width="1000" height="1061"></div>
       <div class="linha__txt">
@@ -423,10 +460,18 @@ section[id]{scroll-margin-top:88px}
         <p class="linha__meta"><b>Formatos:</b> 11,5x23 · 15x30 · 40x40</p>
       </div>
     </article>
+    -->
+
 
     <!-- 5 seixos -->
     <article class="linha rv">
-      <div class="linha__media"><img src="assets/img/linha-seixos.webp" alt="Jardim de seixos com oliveira" loading="lazy" width="1000" height="1500"></div>
+      <div class="linha__media">
+        <div class="xfade">
+          <img src="assets/img/linha-seixos-1.webp" alt="Jardim com seixos rolados" loading="lazy" width="900" height="1350">
+          <img src="assets/img/linha-seixos-2.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+          <img src="assets/img/linha-seixos-3.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+        </div>
+      </div>
       <div class="linha__txt">
         <h3 class="linha__name">Seixos</h3>
         <p class="linha__tag">o paisagismo que arremata</p>
@@ -437,8 +482,8 @@ section[id]{scroll-margin-top:88px}
   </div>
 </section>
 
-<!-- ===================== AMOSTRAS ===================== -->
-<section class="section amostras" id="amostras">
+<!-- ===================== AMOSTRAS — OCULTA POR ORA (remover o hidden pra voltar) ===================== -->
+<section class="section amostras" id="amostras" hidden>
   <div class="sec-head rv">
     <h2>As pedras da casa</h2>
     <p class="lead">Uma amostra do acervo. Toda pedra natural é única: cada peça chega com a variação de cor e veio que só a natureza faz.</p>
@@ -463,7 +508,7 @@ section[id]{scroll-margin-top:88px}
 
 <!-- ===================== APLICAÇÕES ===================== -->
 <section class="section aplic" id="aplicacoes">
-  <div class="sec-head rv">
+  <div class="sec-head sec-head--center rv">
     <h2>Onde a pedra faz diferença</h2>
     <p class="lead">A mesma matéria-prima, aplicada com intenção. Veja a pedra natural em cada parte do projeto.</p>
   </div>
@@ -514,14 +559,14 @@ section[id]{scroll-margin-top:88px}
       <h2>Vamos revestir o seu próximo projeto</h2>
       <p>Conte o que você está construindo. A gente indica as pedras, os formatos e manda o orçamento sem enrolação.</p>
       <div class="contato__info">
-        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg><a href="#" id="wa-link" data-tel="5528999999999">WhatsApp: <span data-tel-display>(28) 99999-9999</span></a></div>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg><a href="#" id="wa-link" data-tel="5545991284792">WhatsApp: <span data-tel-display>(45) 99128-4792</span></a></div>
         <div class="ci"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="mailto:contato@pedrasdobrasil.com.br">contato@pedrasdobrasil.com.br</a></div>
-        <div class="ci"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1"/></svg><a href="https://instagram.com/pedrasdobrasil" target="_blank" rel="noopener">@pedrasdobrasil</a></div>
-        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0114 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Cachoeiro de Itapemirim · Espírito Santo</span></div>
+        <div class="ci"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1"/></svg><a href="https://instagram.com/pedrasdobrasilfoz" target="_blank" rel="noopener">@pedrasdobrasilfoz</a></div>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0114 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Rua Urano, 1.500 · Jardim Alvorada · Foz do Iguaçu · PR</span></div>
       </div>
     </div>
     <form class="form rv rv-d1" id="form">
-      <h3>Peça seu orçamento</h3>
+      <h3>Vamos conversar sobre o seu projeto?</h3>
       <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" placeholder="Como podemos te chamar" required></div>
       <div class="field"><label for="f-tel">WhatsApp</label><input id="f-tel" name="tel" type="tel" placeholder="(00) 00000-0000" required></div>
       <div class="field"><label for="f-cidade">Cidade / obra</label><input id="f-cidade" name="cidade" type="text" placeholder="Onde é o projeto"></div>
@@ -548,7 +593,7 @@ section[id]{scroll-margin-top:88px}
           <li><a href="#linhas">Travertinos</a></li>
           <li><a href="#linhas">Moledos</a></li>
           <li><a href="#linhas">Piscina</a></li>
-          <li><a href="#linhas">Calçadas &amp; Pisos</a></li>
+          <li hidden><a href="#linhas">Calçadas &amp; Pisos</a></li>
           <li><a href="#linhas">Seixos</a></li>
         </ul>
       </div>
@@ -556,7 +601,7 @@ section[id]{scroll-margin-top:88px}
         <h4>Navegar</h4>
         <ul>
           <li><a href="#marca">Sobre</a></li>
-          <li><a href="#amostras">Amostras</a></li>
+          <li hidden><a href="#amostras">Amostras</a></li>
           <li><a href="#aplicacoes">Aplicações</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -564,10 +609,10 @@ section[id]{scroll-margin-top:88px}
       <div class="footer__col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="#" class="wa-link" data-tel="5528999999999">WhatsApp (28) 99999-9999</a></li>
+          <li><a href="#" class="wa-link" data-tel="5545991284792">WhatsApp (45) 99128-4792</a></li>
           <li><a href="mailto:contato@pedrasdobrasil.com.br">contato@pedrasdobrasil.com.br</a></li>
-          <li><a href="https://instagram.com/pedrasdobrasil" target="_blank" rel="noopener">@pedrasdobrasil</a></li>
-          <li>Cachoeiro de Itapemirim · ES</li>
+          <li><a href="https://instagram.com/pedrasdobrasilfoz" target="_blank" rel="noopener">@pedrasdobrasilfoz</a></li>
+          <li>Rua Urano, 1.500 · Jardim Alvorada · Foz do Iguaçu · PR</li>
         </ul>
       </div>
     </div>
@@ -641,7 +686,7 @@ section[id]{scroll-margin-top:88px}
   d.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 
   /* ---------- WhatsApp links + form ---------- */
-  var TEL='5528999999999'; // [A PREENCHER] número real da Pedras do Brasil
+  var TEL='5545991284792';
   function waURL(txt){return 'https://wa.me/'+TEL+'?text='+encodeURIComponent(txt);}
   d.querySelectorAll('#wa-link,.wa-link').forEach(function(a){
     a.href=waURL('Olá! Vim pelo site e quero saber mais sobre as pedras da Pedras do Brasil.');
