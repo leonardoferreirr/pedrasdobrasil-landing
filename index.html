@@ -189,6 +189,19 @@ section[id]{scroll-margin-top:88px}
   .linha__media{width:100%;max-width:clamp(230px,20vw,300px);justify-self:start}
   .linha:nth-child(even) .linha__media{order:2;justify-self:end}
 }
+/* xadrez 2x2 no desktop: travertinos|moledos em cima, piscina|seixos embaixo */
+@media(min-width:1040px){
+  .linhas .container{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .linha+.linha{border-top:none}
+  .linha{grid-template-columns:clamp(180px,17vw,248px) minmax(0,1fr);
+    gap:clamp(1.4rem,2.2vw,2.2rem);align-items:center;padding-block:clamp(2.4rem,4vw,3.6rem)}
+  /* foto sempre à esquerda dentro da célula */
+  .linha__media,.linha:nth-child(even) .linha__media{width:100%;max-width:none;order:0;justify-self:stretch}
+  .linha:nth-child(odd){border-right:1px solid var(--linha);padding-right:clamp(2rem,3.4vw,3.6rem)}
+  .linha:nth-child(even){padding-left:clamp(2rem,3.4vw,3.6rem)}
+  .linha:nth-child(-n+2){border-bottom:1px solid var(--linha)}
+  .linha__desc{max-width:none}
+}
 
 /* ============ AMOSTRAS ============ */
 .amostras{background:var(--verde-800);color:#fff;position:relative;overflow:hidden}
