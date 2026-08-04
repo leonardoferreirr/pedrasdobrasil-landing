@@ -156,7 +156,7 @@ section[id]{scroll-margin-top:88px}
 .sec-head--center p{margin-inline:auto}
 #linhas .sec-head--center h2{max-width:24ch}
 /* crossfade estático de fotos dentro de cada linha */
-.xfade{position:relative;aspect-ratio:2/3;overflow:hidden}
+.xfade{position:relative;width:100%;aspect-ratio:2/3;overflow:hidden}
 .xfade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
   animation:xfade 13.5s var(--ease) infinite}
 .xfade img:nth-child(1){animation-delay:0s}
@@ -169,7 +169,7 @@ section[id]{scroll-margin-top:88px}
 }
 .linha{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;padding-block:clamp(2rem,5vw,4rem)}
 .linha+.linha{border-top:1px solid var(--linha)}
-.linha__media{position:relative;overflow:hidden;border-radius:2px}
+.linha__media{position:relative;overflow:hidden;border-radius:0}
 .linha__media img{width:100%;aspect-ratio:2/3;object-fit:cover;transition:transform 1.4s var(--ease)}
 .linha:hover .linha__media img{transform:scale(1.05)}
 .linha__num{font-family:var(--sans);font-weight:300;font-size:.8rem;letter-spacing:.2em;color:var(--verde-600)}
@@ -184,7 +184,9 @@ section[id]{scroll-margin-top:88px}
 .linha__meta b{font-weight:400;color:var(--tinta)}
 @media(min-width:860px){
   .linha{grid-template-columns:1fr 1fr;gap:clamp(3rem,5vw,5.5rem)}
-  .linha:nth-child(even) .linha__media{order:2}
+  /* foto estreita, encostada na margem externa da seção */
+  .linha__media{width:100%;max-width:clamp(230px,20vw,300px);justify-self:start}
+  .linha:nth-child(even) .linha__media{order:2;justify-self:end}
 }
 
 /* ============ AMOSTRAS ============ */
