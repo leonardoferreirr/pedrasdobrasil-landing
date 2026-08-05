@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLKSCMBM');</script>
+<!-- End Google Tag Manager -->
+<title>Abrindo o WhatsApp · Pedras do Brasil</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#3e564c">
+<link rel="icon" href="favicon.ico?v=4" sizes="any">
+<link rel="icon" href="favicon-256.png?v=4" type="image/png">
+<link rel="apple-touch-icon" href="favicon-256.png?v=4">
+<link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Jost';font-style:normal;font-weight:300 500;font-display:swap;src:url('assets/fonts/jost-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+:root{
+  --verde-800:#3e564c; --verde-600:#507f69; --verde-700:#465f54;
+  --areia:#f2f0e9;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;
+  background:var(--verde-800);color:#fff;padding:clamp(24px,6vw,56px);
+  font-family:'Jost','Helvetica Neue',Arial,sans-serif;font-weight:300;line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-align:center}
+.box{display:grid;justify-items:center;gap:1.35rem;max-width:520px}
+img.logo{height:56px;width:auto}
+h1{font-weight:300;letter-spacing:-.01em;font-size:clamp(1.6rem,4.4vw,2.3rem);
+  line-height:1.15;margin:0;max-width:18ch}
+p{margin:0;color:rgba(255,255,255,.8);max-width:44ch;font-size:1rem}
+.btn{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:.95rem 1.8rem;border-radius:100px;background:var(--verde-600);color:#fff;
+  text-decoration:none;border:1px solid transparent;transition:background .38s var(--ease)}
+.btn:hover{background:var(--verde-700);border-color:rgba(255,255,255,.34)}
+.btn svg{width:17px;height:17px;fill:currentColor;flex:none}
+.voltar{font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none}
+.voltar:hover{color:#fff}
+.spin{width:26px;height:26px;border:2px solid rgba(255,255,255,.22);border-top-color:#fff;
+  border-radius:50%;animation:g .9s linear infinite}
+@keyframes g{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLKSCMBM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager -->
+  <div class="box">
+    <img class="logo" src="assets/img/logo-horizontal-branco.png" alt="Pedras do Brasil" width="260" height="60">
+    <div class="spin" aria-hidden="true"></div>
+    <h1>Estamos abrindo o seu WhatsApp</h1>
+    <p id="msg">A conversa com a equipe da Pedras do Brasil abre em instantes.</p>
+    <a class="btn" id="ir" href="https://wa.link/jz4nrm" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+      Abrir o WhatsApp agora
+    </a>
+    <a class="voltar" href="/">Voltar para o site</a>
+  </div>
+
+<script>
+/* Página de obrigado: é aqui que a conversão é contada, antes de sair para
+   o WhatsApp. Dois contratos:
+     ?c=<contexto>  vai para o link curto da loja, com a mensagem que o
+                    próprio WhatsApp Business já traz configurada
+     ?c=form        veio do formulário: a mensagem com os dados do lead
+                    ficou na sessão e é montada aqui, para não passar dado
+                    pessoal pela URL (e por consequência pelo Analytics) */
+(function () {
+  'use strict';
+  var LINK_LOJA = 'https://wa.link/jz4nrm';
+  var TEL = '5545991284792';
+
+  var q = new URLSearchParams(location.search);
+  var contexto = q.get('c') || 'contato';
+  var destino = LINK_LOJA;
+
+  if (contexto === 'form') {
+    var txt = '';
+    try { txt = sessionStorage.getItem('pdb_msg') || ''; } catch (e) {}
+    if (txt) {
+      destino = 'https://wa.me/' + TEL + '?text=' + encodeURIComponent(txt);
+      document.getElementById('msg').textContent =
+        'Recebemos o seu contato. A conversa abre em instantes, já com os dados que você preencheu.';
+      try { sessionStorage.removeItem('pdb_msg'); } catch (e) {}
+    }
+  }
+
+  document.getElementById('ir').href = destino;
+
+  /* Empurra o evento para o dataLayer ANTES de sair, para o GTM disparar a
+     tag de conversão sabendo qual CTA converteu. No GTM, usar o gatilho de
+     Evento Personalizado "conversao_whatsapp". */
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'conversao_whatsapp', contexto: contexto });
+
+  /* 1,8s cobre a carga do container e o disparo da tag em conexão móvel.
+     replace() para o botão voltar não cair aqui de novo. */
+  setTimeout(function () { location.replace(destino); }, 1800);
+})();
+</script>
+</body>
+</html>

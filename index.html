@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.className='js';</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLKSCMBM');</script>
+<!-- End Google Tag Manager -->
 <title>Pedras do Brasil · Revestimentos e pisos em pedra natural</title>
 <meta name="description" content="Travertinos, moledos, revestimentos para piscina, calçadas e seixos em pedra natural brasileira. Curadoria de pedras das melhores pedreiras do país para projetos de alto padrão.">
 <meta name="theme-color" content="#3e564c">
@@ -105,6 +112,20 @@ h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.1;letter-spacing
 .btn--wa{background:var(--verde-600);color:#fff}
 .btn--wa:hover{background:var(--verde-700)}
 .btn svg{width:16px;height:16px;flex:none}
+
+/* ---- chamada de WhatsApp ao fim de cada secao ---- */
+.sec-cta{display:flex;justify-content:center;margin-top:clamp(2.4rem,5vw,3.8rem)}
+/* nas faixas claras o verde do botao ja separa; nas escuras ele precisa de
+   um contorno claro para nao encostar no fundo */
+.contato .sec-cta .btn--wa,.aplic .sec-cta .btn--wa{border-color:rgba(255,255,255,.34)}
+
+/* ---- botao flutuante ---- */
+.wa-float{position:fixed;right:clamp(14px,2.2vw,26px);bottom:clamp(14px,2.2vw,26px);z-index:70;
+  width:56px;height:56px;border-radius:50%;background:var(--verde-600);display:grid;place-items:center;
+  box-shadow:0 10px 30px rgba(40,46,42,.28);transition:transform .28s var(--ease),background .28s var(--ease)}
+.wa-float:hover{transform:scale(1.06);background:var(--verde-700)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+@media (prefers-reduced-motion:reduce){.wa-float{transition:none}}
 .hero__foot{position:absolute;left:0;right:0;bottom:clamp(1.4rem,3vh,2.2rem);display:flex;align-items:center;justify-content:space-between}
 .hero__dots{display:flex;gap:.7rem;list-style:none}
 .hero__dots button{width:34px;height:2px;background:rgba(255,255,255,.35);border:0;padding:0;cursor:pointer;position:relative;overflow:hidden}
@@ -316,6 +337,10 @@ section[id]{scroll-margin-top:88px}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLKSCMBM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager -->
 
 <!-- ===================== NAV ===================== -->
 <header class="nav" id="nav">
@@ -378,7 +403,7 @@ section[id]{scroll-margin-top:88px}
     </div>
     <div class="hero__actions">
       <a href="#linhas" class="btn btn--solid">Ver as linhas</a>
-      <a href="#contato" class="btn btn--ghost">Falar com um consultor</a>
+      <a href="obrigado.html?c=hero" class="btn btn--ghost">Falar com um consultor</a>
     </div>
   </div>
   <div class="container hero__foot">
@@ -405,6 +430,7 @@ section[id]{scroll-margin-top:88px}
       <div class="pillar rv rv-d2"><h3>Direto da pedreira</h3><p>Curadoria e procedência. Sabemos de onde vem cada pedra que entregamos.</p></div>
       <div class="pillar rv rv-d3"><h3>Do bloco ao projeto</h3><p>Formatos, laminados e rock face na medida certa para a sua obra.</p></div>
     </div>
+    <div class="sec-cta rv"><a class="btn btn--wa" href="obrigado.html?c=consultor"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Falar com um consultor</a></div>
   </div>
 </section>
 
@@ -500,6 +526,7 @@ section[id]{scroll-margin-top:88px}
       </div>
     </article>
   </div>
+  <div class="container"><div class="sec-cta rv"><a class="btn btn--wa" href="obrigado.html?c=linhas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Consultar preços e disponibilidade</a></div></div>
 </section>
 
 <!-- ===================== AMOSTRAS — OCULTA POR ORA (remover o hidden pra voltar) ===================== -->
@@ -518,7 +545,7 @@ section[id]{scroll-margin-top:88px}
     </div>
     <div class="amostras__note rv">
       <p>O catálogo completo, com formatos e disponibilidade, vai direto pra você.</p>
-      <a href="#contato" class="btn btn--wa" id="wa-catalogo">
+      <a href="obrigado.html?c=catalogo" class="btn btn--wa" id="wa-catalogo">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
         Receber catálogo
       </a>
@@ -541,6 +568,7 @@ section[id]{scroll-margin-top:88px}
       <figure class="apl apl--pai rv rv-d2"><img src="assets/img/linha-seixos.webp" alt="Paisagismo com seixos" loading="lazy"><figcaption class="apl__cap"><span>Jardim</span><h3>Paisagismo</h3></figcaption></figure>
       <figure class="apl apl--par rv rv-d3"><img src="assets/img/hero-4-travertino.webp" alt="Parede em travertino" loading="lazy"><figcaption class="apl__cap"><span>Detalhe</span><h3>Paredes</h3></figcaption></figure>
     </div>
+    <div class="sec-cta rv"><a class="btn btn--wa" href="obrigado.html?c=obra"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Tirar uma dúvida sobre a minha obra</a></div>
   </div>
 </section>
 
@@ -569,6 +597,7 @@ section[id]{scroll-margin-top:88px}
       </div>
     </div>
   </div>
+  <div class="container"><div class="sec-cta rv"><a class="btn btn--wa" href="obrigado.html?c=orcamento"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Pedir orçamento no WhatsApp</a></div></div>
 </section>
 
 <!-- ===================== CONTATO ===================== -->
@@ -579,7 +608,7 @@ section[id]{scroll-margin-top:88px}
       <h2>Vamos revestir o seu próximo projeto</h2>
       <p>Conte o que você está construindo. A gente indica as pedras, os formatos e manda o orçamento sem enrolação.</p>
       <div class="contato__info">
-        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg><a href="#" id="wa-link">(45) 99128-4792</a></div>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg><a href="obrigado.html?c=contato" id="wa-link">(45) 99128-4792</a></div>
         <div class="ci"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1"/></svg><a href="https://instagram.com/pedrasdobrasilfoz" target="_blank" rel="noopener">@pedrasdobrasilfoz</a></div>
         <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0114 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a class="map-link" href="#" target="_blank" rel="noopener">Rua Urano, 1.500 · Jardim Alvorada · Foz do Iguaçu · PR</a></div>
       </div>
@@ -640,6 +669,10 @@ section[id]{scroll-margin-top:88px}
     </div>
   </div>
 </footer>
+
+<a class="wa-float" href="obrigado.html?c=flutuante" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+</a>
 
 <script>
 (function(){
@@ -703,17 +736,14 @@ section[id]{scroll-margin-top:88px}
   },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
   d.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 
-  /* ---------- WhatsApp links + form ---------- */
-  var TEL='5545991284792';
-  function waURL(txt){return 'https://wa.me/'+TEL+'?text='+encodeURIComponent(txt);}
-  d.querySelectorAll('#wa-link,.wa-link').forEach(function(a){
-    a.href=waURL('Olá! Vim pelo site e quero saber mais sobre as pedras da Pedras do Brasil.');
-  });
+  /* ---------- WhatsApp + form ----------
+     Todo caminho para o WhatsApp passa por obrigado.html, que é onde a
+     conversão é contada antes do redirecionamento. Os links já apontam
+     para lá no HTML; aqui só tratamos o mapa e o envio do formulário. */
   var ENDERECO='Rua Urano, 1500 - Jardim Alvorada, Foz do Iguaçu - PR';
   var mapsURL='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(ENDERECO);
   d.querySelectorAll('.map-link').forEach(function(a){a.href=mapsURL;});
-  var waCat=d.getElementById('wa-catalogo');
-  if(waCat)waCat.href=waURL('Olá! Gostaria de receber o catálogo completo da Pedras do Brasil.');
+
   var form=d.getElementById('form');
   form.addEventListener('submit',function(ev){
     ev.preventDefault();
@@ -723,7 +753,10 @@ section[id]{scroll-margin-top:88px}
       'WhatsApp: '+(f.tel.value||'-')+'\n'+
       'Cidade/obra: '+(f.cidade.value||'-')+'\n'+
       'Procuro: '+(f.msg.value||'-');
-    window.open(waURL(txt),'_blank');
+    /* a mensagem vai pela sessão, não pela URL: são dados do lead e não
+       devem acabar registrados na URL da página de obrigado */
+    try{ sessionStorage.setItem('pdb_msg',txt); }catch(e){}
+    location.href='obrigado.html?c=form';
   });
 
   d.getElementById('ano').textContent=new Date().getFullYear();
