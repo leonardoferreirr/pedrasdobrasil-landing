@@ -66,32 +66,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
 <script>
-/* Página de obrigado: é aqui que a conversão é contada, antes de sair para
-   o WhatsApp. Dois contratos:
-     ?c=<contexto>  vai para o link curto da loja, com a mensagem que o
-                    próprio WhatsApp Business já traz configurada
-     ?c=form        veio do formulário: a mensagem com os dados do lead
-                    ficou na sessão e é montada aqui, para não passar dado
-                    pessoal pela URL (e por consequência pelo Analytics) */
+/* Página de obrigado: é aqui que a conversão é contada, antes de sair para o
+   WhatsApp. O `?c=<contexto>` diz qual CTA converteu; o destino é sempre o
+   link curto da loja, que já leva a mensagem configurada no WhatsApp
+   Business. */
 (function () {
   'use strict';
-  var LINK_LOJA = 'https://wa.link/jz4nrm';
-  var TEL = '5545991284792';
-
-  var q = new URLSearchParams(location.search);
-  var contexto = q.get('c') || 'contato';
-  var destino = LINK_LOJA;
-
-  if (contexto === 'form') {
-    var txt = '';
-    try { txt = sessionStorage.getItem('pdb_msg') || ''; } catch (e) {}
-    if (txt) {
-      destino = 'https://wa.me/' + TEL + '?text=' + encodeURIComponent(txt);
-      document.getElementById('msg').textContent =
-        'Recebemos o seu contato. A conversa abre em instantes, já com os dados que você preencheu.';
-      try { sessionStorage.removeItem('pdb_msg'); } catch (e) {}
-    }
-  }
+  var destino = 'https://wa.link/jz4nrm';
+  var contexto = new URLSearchParams(location.search).get('c') || 'contato';
 
   document.getElementById('ir').href = destino;
 
