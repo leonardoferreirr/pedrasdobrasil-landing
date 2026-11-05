@@ -366,6 +366,12 @@ section[id]{scroll-margin-top:88px}
 }
 @media(min-width:901px){.mobile{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
+
+/* celular: botões empilhados sempre na mesma largura (a do mais largo) */
+@media (max-width:600px){
+  .hero__actions{display:grid;grid-template-columns:minmax(0,max-content);width:fit-content;max-width:100%;}
+  .hero__actions>*{width:100%;justify-content:center;text-align:center}
+}
 </style>
 </head>
 <body>
